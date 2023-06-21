@@ -1,0 +1,6 @@
+*.lock.hcl
+**/.terraform/*
+terraform.tfstate*
+dev-prod.pem
+key-pair/*
+

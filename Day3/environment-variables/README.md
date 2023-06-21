@@ -1,0 +1,3 @@
+export TF_VAR_username=bichesq
+export TF_VAR_password=bichessq123
+echo $TF_VAR_DEV_DB_name
