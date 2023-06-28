@@ -23,13 +23,13 @@ variable "instance_class" {
 variable "username" {
   description = "username"
   type = string
+  default = "bichesq"
   sensitive = true
- #default = "bichesq"
 }
 
 variable "password" {
   description = "password"
   type = string
+  default = "bichesq123"
   sensitive = true
- #default = "bichesq123"
 }

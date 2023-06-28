@@ -8,6 +8,10 @@ variable "Dev_Instance_AMI_id" {
 
 variable "Dev_Instance_type" {
   description = "Development instance type"
-  type = list(string)
-  default = ["t2.micro","t2.small","t2.nano"]
+  type = map
+  default = {
+    dev = "t2.micro",
+    prod = "t2.small",
+    staging = "t2.nano"
+  }
 }
