@@ -45,7 +45,7 @@ Here the variable types are being handled.
 - The variable type is defined as list(string)<br>
 - when the variable is called, one value in the list has to be spesified using indexing
 
-<h3>map<h3>
+<h3>map</h3>
 - With the variable type = map, the default argument is set to a map. A map is a list of key-value pairs enclosed in curly brackets<br>
 - When calling this variable, we pass the corresponding key to the value that is desired in square brackets
 
