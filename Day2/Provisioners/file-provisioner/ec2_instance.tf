@@ -11,6 +11,11 @@ resource "aws_instance" "dev" {
     Account = "dev-account"
     Name = "HelloWorld"
 }
+
+provisioner "file" {
+    source      = "app/"
+    destination = "/home/ec2-user"
+}
  connection {
     type     = "ssh"
     user     = "ec2-user"
@@ -18,12 +23,5 @@ resource "aws_instance" "dev" {
     host     = self.public_ip
     private_key = file("key-pair/dev-prod.pem")
   }
-  provisioner "remote-exec" {
-    inline = [
-      "sudo yum update -y",
-      "sudo yum install -y httpd.x86_64",
-      "sudo systemctl start httpd.service",
-      "sudo systemctl enable httpd.service"
-    ]
-  }
+  
 }

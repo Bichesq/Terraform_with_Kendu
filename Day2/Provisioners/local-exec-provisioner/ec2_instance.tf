@@ -18,12 +18,7 @@ resource "aws_instance" "dev" {
     host     = self.public_ip
     private_key = file("key-pair/dev-prod.pem")
   }
-  provisioner "remote-exec" {
-    inline = [
-      "sudo yum update -y",
-      "sudo yum install -y httpd.x86_64",
-      "sudo systemctl start httpd.service",
-      "sudo systemctl enable httpd.service"
-    ]
+   provisioner "local-exec" {
+    command = "echo ${self.private_ip} >> private_ips.txt"
   }
 }
