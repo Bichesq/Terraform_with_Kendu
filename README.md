@@ -132,3 +132,45 @@ Here the variable types are being handled.
 - The key is the path in the bucket to the state file<br>
 - The region argument defines the region choice for the s3 bucket.<br>
 - Note the terraform automatically uses the backend except it is not set.<br>
+
+<h3>Day 7</h3>
+<h4>Resourse Creation</h4>
+Terraform creates resourses based on the provider specification defined in the configuration files.
+<h4>Resourse Management</h4>
+Resourse management is effected using the terraform state file. It track all the resourses created and the changes made to our resourses.
+<h4>Resourse Update</h4>
+These are just the changes made to a created resourse.
+<h4>Resourse deletion</h4>
+Removing an existing resourse, usually obtained after running terraform destroy
+<h4>Resourse dependency</h4>
+Some resourse by virtue of its nature or by designed depend on other resourses. This dependency can be implicit (by nature) or explicit(by design). When a resourse depends on another explicitly, the 'depends on' attribute has been used to make this happen.
+<h4>Resourse replacement</h4>
+Resourses are usually replaced when certain changes are made to the resourse, instead for just changes a particular feature. These are features that are unchangeable once the resourse has been created.
+
+<h4>Terraform State commands</h4>
+Terraform provides several commands to manage and interact with the state file. These commands allow you to inspect, modify, and manipulate the state of your infrastructure managed by Terraform. Here are some commonly used Terraform state commands:
+
+<h5>terraform state list:</h5> 
+This command lists all the resources present in the state file.
+
+<h5>terraform state show:</h5> 
+It displays detailed information about a specific resource in the state file. You need to provide the resource address or name as an argument to this command.
+
+<h5>terraform state pull:</h5> This command retrieves and outputs the current state data in JSON format. It can be useful for scripting or integrating with other tools.
+
+<h5>terraform state mv:</h5> It is used to rename or move resources within the state file. This command is helpful when you want to update resource names or change their location within the state.
+
+<h5>terraform state rm:</h5> This command removes a resource from the state file. It is useful when you want to completely remove a resource from Terraform management.
+
+<h5>terraform state import:</h5> It imports an existing resource into the Terraform state file. You need to provide the resource address and its unique identifier as arguments.
+
+<h5>terraform state push:</h5> This command is used with remote state backends. It pushes the local state to the configured remote backend.
+
+<h5>terraform state replace-provider:</h5> It replaces one provider with another in the state file. This command is helpful when you want to migrate from one provider to another while preserving the existing state.
+
+<h5>terraform state refresh:</h5>
+This gathers the latest information about your resourses and reconsiles it with your state file.
+
+<h5>terraform taint</h5>
+This is used to mark resouses for deletion. You can always run terrafrom untint to undo action. Tainted resourses will be destroyed and recreated on terraform apply.
+
