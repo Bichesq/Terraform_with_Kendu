@@ -50,7 +50,7 @@ The remote-exec provisioner invokes a script on a remote resource after it is cr
 - There are two methods to go about the remote-exec provisioner: inline and script
 
 <h5>Inline</h5>
-In the inline execution, use the inline attribute. It takes as values a list of command you wish to run on the remote terminal - []
+In the inline execution, use the inline attribute. It takes as values a list of command you wish to run on the remote terminal 
 
 <h5>Script</h5>
 
@@ -162,7 +162,9 @@ It displays detailed information about a specific resource in the state file. Yo
 
 <h5>terraform state rm:</h5> This command removes a resource from the state file. It is useful when you want to completely remove a resource from Terraform management.
 
-<h5>terraform state import:</h5> It imports an existing resource into the Terraform state file. You need to provide the resource address and its unique identifier as arguments.
+<h5>terraform state import:</h5> It imports an existing resource into the Terraform state file. You need to provide the resource address and its unique identifier as arguments.<br>
+From terraform version 1.5.x, you can make use of import block in the configuration file, as well as generate a configuration file for the imported resourse (using the -generate-config-out flag on the command line)<br>
+To generate configuration, run terraform plan with the -generate-config-out flag and supply a new file path. Do not supply a path to an existing file, or Terraform throws an error.
 
 <h5>terraform state push:</h5> This command is used with remote state backends. It pushes the local state to the configured remote backend.
 
